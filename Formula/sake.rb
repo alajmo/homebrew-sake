@@ -5,21 +5,21 @@
 class Sake < Formula
   desc "sake is a CLI tool that enables you to run commands on servers via ssh"
   homepage "https://sakecli.com"
-  version "0.1.5"
+  version "0.1.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_darwin_arm64.tar.gz"
-      sha256 "d9c9f25547a1c8fac2ee40d47a25d7f2543d1f7d15e0734d0450087a311c34b0"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_darwin_arm64.tar.gz"
+      sha256 "6ca45840cb6686b81ed01f8d0ba373d10e3d39f2acd000835af829c54ff6a7e1"
 
       def install
         bin.install "sake"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_darwin_amd64.tar.gz"
-      sha256 "2a2a99e461c6605c442682202e3e55b9ebb7a171e1e87cdb412c415306dd2929"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_darwin_amd64.tar.gz"
+      sha256 "10f4bcf7fda180e16461ee09e3793b3e123879a13090753a4bd2450567d22412"
 
       def install
         bin.install "sake"
@@ -29,16 +29,16 @@ class Sake < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_linux_amd64.tar.gz"
-      sha256 "aefd38f5648d4be31ec67e36c36a94e0ec6117cc5da742063c48528e01a94a7e"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_linux_amd64.tar.gz"
+      sha256 "8b20d2d9d57fe66492eadf90d567b97a4a623916d067060e9f5215e20c4cfdc6"
 
       def install
         bin.install "sake"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_linux_arm64.tar.gz"
-      sha256 "e94a55ea4422eac65a20d0b159ca13cb67913ca9bdf2bf207a6aecbd36ea9b67"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_linux_arm64.tar.gz"
+      sha256 "ce3681cfcb6c358463cc78ec0219fb0eecddc960141515c43d47e79dd2cf6f7a"
 
       def install
         bin.install "sake"
