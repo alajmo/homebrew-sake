@@ -5,21 +5,21 @@
 class Sake < Formula
   desc "sake is a CLI tool that enables you to run commands on servers via ssh"
   homepage "https://sakecli.com"
-  version "0.1.3"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.3/sake_0.1.3_darwin_amd64.tar.gz"
-      sha256 "12af53a7b7d343cd09ff9459a2b60b3e08f5ba817d3ac46c271cc257a2f703f2"
+    if Hardware::CPU.arm?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_darwin_arm64.tar.gz"
+      sha256 "d9c9f25547a1c8fac2ee40d47a25d7f2543d1f7d15e0734d0450087a311c34b0"
 
       def install
         bin.install "sake"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.3/sake_0.1.3_darwin_arm64.tar.gz"
-      sha256 "b8df247b55ca3d2e500a92d1c9c849ff5e9b05bf85d9ccef57866cb577124951"
+    if Hardware::CPU.intel?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_darwin_amd64.tar.gz"
+      sha256 "2a2a99e461c6605c442682202e3e55b9ebb7a171e1e87cdb412c415306dd2929"
 
       def install
         bin.install "sake"
@@ -29,16 +29,16 @@ class Sake < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.3/sake_0.1.3_linux_amd64.tar.gz"
-      sha256 "7aa3e6a586a3473ee557c64a1411bc14a52b53727fe6b8192baa3d7ed19877a7"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_linux_amd64.tar.gz"
+      sha256 "aefd38f5648d4be31ec67e36c36a94e0ec6117cc5da742063c48528e01a94a7e"
 
       def install
         bin.install "sake"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.3/sake_0.1.3_linux_arm64.tar.gz"
-      sha256 "942d748410e3441aad1c865854bb848154a13998ecdefeba789c152d0c85d3d7"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.5/sake_0.1.5_linux_arm64.tar.gz"
+      sha256 "e94a55ea4422eac65a20d0b159ca13cb67913ca9bdf2bf207a6aecbd36ea9b67"
 
       def install
         bin.install "sake"
