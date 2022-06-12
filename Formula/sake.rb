@@ -5,21 +5,21 @@
 class Sake < Formula
   desc "sake is a CLI tool that enables you to run commands on servers via ssh"
   homepage "https://sakecli.com"
-  version "0.1.6"
+  version "0.1.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_darwin_arm64.tar.gz"
-      sha256 "6ca45840cb6686b81ed01f8d0ba373d10e3d39f2acd000835af829c54ff6a7e1"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_darwin_arm64.tar.gz"
+      sha256 "02a003c096641aeb50f699b72bc59e1688971e10cc0afa22135625e1b5977feb"
 
       def install
         bin.install "sake"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_darwin_amd64.tar.gz"
-      sha256 "10f4bcf7fda180e16461ee09e3793b3e123879a13090753a4bd2450567d22412"
+      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_darwin_amd64.tar.gz"
+      sha256 "68b9adf04a2797ec660ce1a390ef72c94ee11270bef95286df9d807bca3d6224"
 
       def install
         bin.install "sake"
@@ -28,17 +28,17 @@ class Sake < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_linux_amd64.tar.gz"
-      sha256 "8b20d2d9d57fe66492eadf90d567b97a4a623916d067060e9f5215e20c4cfdc6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_linux_arm64.tar.gz"
+      sha256 "7aa2c1ee8141a21b307583b8caf06a9cd5772b6645ae5f269ee5336c1aaf6e6b"
 
       def install
         bin.install "sake"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.6/sake_0.1.6_linux_arm64.tar.gz"
-      sha256 "ce3681cfcb6c358463cc78ec0219fb0eecddc960141515c43d47e79dd2cf6f7a"
+    if Hardware::CPU.intel?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_linux_amd64.tar.gz"
+      sha256 "36ec5e0c8a948c194cd9e7288de3f9cdd7e013e36df07f0cac3257a6521c8ee4"
 
       def install
         bin.install "sake"
