@@ -5,21 +5,21 @@
 class Sake < Formula
   desc "sake is a CLI tool that enables you to run commands on servers via ssh"
   homepage "https://sakecli.com"
-  version "0.1.7"
+  version "0.1.8"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_darwin_arm64.tar.gz"
-      sha256 "02a003c096641aeb50f699b72bc59e1688971e10cc0afa22135625e1b5977feb"
+    if Hardware::CPU.intel?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.8/sake_0.1.8_darwin_amd64.tar.gz"
+      sha256 "69cc545db614fd4dfe4642a921738e0a592d3379ed0b164837fbbd217131afca"
 
       def install
         bin.install "sake"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_darwin_amd64.tar.gz"
-      sha256 "68b9adf04a2797ec660ce1a390ef72c94ee11270bef95286df9d807bca3d6224"
+    if Hardware::CPU.arm?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.8/sake_0.1.8_darwin_arm64.tar.gz"
+      sha256 "23714cf346daf4c24355f04c2cb9fdb4bf4d88c1428ca43df440293bd269c4f1"
 
       def install
         bin.install "sake"
@@ -28,17 +28,17 @@ class Sake < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_linux_arm64.tar.gz"
-      sha256 "7aa2c1ee8141a21b307583b8caf06a9cd5772b6645ae5f269ee5336c1aaf6e6b"
+    if Hardware::CPU.intel?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.8/sake_0.1.8_linux_amd64.tar.gz"
+      sha256 "1798511757f9dc70978460b94006c16e9b25ae7142a1f4c05fbbfc7064472cab"
 
       def install
         bin.install "sake"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.1.7/sake_0.1.7_linux_amd64.tar.gz"
-      sha256 "36ec5e0c8a948c194cd9e7288de3f9cdd7e013e36df07f0cac3257a6521c8ee4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/alajmo/sake/releases/download/v0.1.8/sake_0.1.8_linux_arm64.tar.gz"
+      sha256 "a07f7f38cef0d0dd2f3a07d4238d0583524bb45d7f956c4814f8c0d45c8e6d31"
 
       def install
         bin.install "sake"
