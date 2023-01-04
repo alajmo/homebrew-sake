@@ -9,17 +9,17 @@ class Sake < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_darwin_arm64.tar.gz"
-      sha256 "7eb103a5515aa679f84d3d6ab23bfe29c18f5ed16d1ac40a6681d63fa3f4fbf8"
+    if Hardware::CPU.intel?
+      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_darwin_amd64.tar.gz"
+      sha256 "5408b831d859fbfaf80c8f8553d9457c55a74e2005316c39995cc961c334a44f"
 
       def install
         bin.install "sake"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_darwin_amd64.tar.gz"
-      sha256 "ce493a49390a7be601f7441564d840fa3d45a93c38c9a973502c3fe182a31655"
+    if Hardware::CPU.arm?
+      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_darwin_arm64.tar.gz"
+      sha256 "bd4d5308d2ea91f8bf8f8c30ecf034fac43ac59c63d32ce5ad4fae8b29f2e58c"
 
       def install
         bin.install "sake"
@@ -28,17 +28,17 @@ class Sake < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_linux_amd64.tar.gz"
-      sha256 "a5e30ee466c0556a5b9aa690ac56d163e244aea5898768138a85e578138b0cb6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_linux_arm64.tar.gz"
+      sha256 "8c7787666dc2dcee96103f7a17091e8140eb6defce67d04493a8ec73a02ac249"
 
       def install
         bin.install "sake"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_linux_arm64.tar.gz"
-      sha256 "e79957d438ef3762c2c7d703a0ca3a1eca9e0819c56fe47572b16f161998e578"
+    if Hardware::CPU.intel?
+      url "https://github.com/alajmo/sake/releases/download/v0.14.0/sake_0.14.0_linux_amd64.tar.gz"
+      sha256 "1f3fe3b911407faf16615969017bc952af0ee60f8dbc8894da20ea3c4059d5e1"
 
       def install
         bin.install "sake"
